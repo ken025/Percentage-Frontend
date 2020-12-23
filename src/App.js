@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './App.css';
 import Welcome from './components/Welcome';
-// import Login from './components/Login';
+import Login from './components/Login';
 // import Signup from './components/Signup';
 
 
@@ -18,6 +18,19 @@ class App extends Component {
     }
   }
   
+  renderMainContainer = () => {
+    return this.state.user.username ?
+    < Welcome />:
+    < Login />
+      // this.state.channel ?
+      //   <MessageContainer channel={this.state.channel}/> :
+      //   <Welcome/>
+      // :
+      //   this.state.signup ?
+      //     <Signup setUser={this.setUser} toggleSignup={this.toggleSignup}/> :
+      //     <Login setUser={this.setUser} toggleSignup={this.toggleSignup}/>
+  }
+
 
   render() {
     return (
@@ -25,7 +38,7 @@ class App extends Component {
       <h1>
         PERCENTAGE
       </h1>
-      <main><Welcome/></main>
+      <main><this.renderMainContainer/></main>
     </>
     );
   }
