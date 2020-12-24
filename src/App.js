@@ -23,7 +23,7 @@ class App extends Component {
       // we cannot use if statements in jsx
       this.state.user.id ?
     < Welcome />:
-    < Login />
+    < Login setUser={this.setUser} />
       // this.state.channel ?
       //   <MessageContainer channel={this.state.channel}/> :
       //   <Welcome/>
@@ -34,6 +34,7 @@ class App extends Component {
     );
   }
 
+  setUser = (user) => this.setState({user: user.user})
 
   render() {
     return (
