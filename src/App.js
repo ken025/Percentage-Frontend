@@ -19,7 +19,9 @@ class App extends Component {
   }
   
   renderMainContainer = () => {
-    return this.state.user.username ?
+    return(
+      // we cannot use if statements in jsx
+      this.state.user.id ?
     < Welcome />:
     < Login />
       // this.state.channel ?
@@ -29,6 +31,7 @@ class App extends Component {
       //   this.state.signup ?
       //     <Signup setUser={this.setUser} toggleSignup={this.toggleSignup}/> :
       //     <Login setUser={this.setUser} toggleSignup={this.toggleSignup}/>
+    );
   }
 
 

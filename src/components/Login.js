@@ -1,51 +1,53 @@
-import React, { Component } from 'react'
-// import { loginRequest } from '../services/requests'
+import React, { Component} from 'react';
 
-export default class Login extends Component{
+export default class Login extends Component {
+   
+    // state makes this a controlled component
+    state = {
+        username: "",
+        password: ""
+    }
 
-//   state = {
-//     username: "",
-//     password: ""
-//   }
+    handleChange = (e) => this.setState({[e.target.name]: e.target.value})
 
-//   onChange = (e) => this.setState({[e.target.name]: e.target.value})
+    handleSubmit = (e) => {
+        e.preventDefault()
+        const { username, password} = this.state
+        // backend is expecting username and password params
+        const body = {user: {username: username, password: password}}
+        fetch('http://localhost:3000/api/v1/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body),
+        })
+        .then(resp => resp.json())
+        .then(resp => {
+            if (!resp.errors) {
+                console.log(resp)
+            } else {
+                alert(resp.errors)
+            }
+        })
+    }
 
-//   onSubmit = (e) => {
-//     e.preventDefault()
-//     const { username, password } = this.state
-//     const body = {username: username, password: password}
-//     loginRequest(body)
-//     .then(response => {
-//       if (!response.errors){
-//         console.log(response)
-//         this.props.setUser(response)
-//       } else {
-//         alert(response.errors)
-//       }
-//     })
-//   }
-
-  render(){
-    return (
-        <h1> Hey girlie, login page</h1>
-//       <div className="login">
-//         <h1>Login!</h1>
-//         <form onSubmit={this.onSubmit}>
-//           <label>
-//             Username:
-//             <input type="text" name="username" onChange={this.onChange} value={this.state.username} />
-//           </label><br/>
-//           <label>
-//             Password:
-//             <input type="password" name="password" onChange={this.onChange} value={this.state.password} />
-//           </label>
-//           <br/>
-//           <input type="submit" value="Login!" style={{display: "none"}}/>
-//         </form>
-//         <button onClick={this.props.toggleSignup}>Or Sign Up!</button>
-//       </div>
-    )
-  }
-
-
- }
+    render(){
+        return(
+            <>
+                <h1>This is my Login Component</h1>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        username:
+                        <input type="text" name="username" onChange={this.handleChange} value={this.state.username} />
+                    </label>
+                    <label>
+                        Password:
+                        <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
+                    </label>
+                    <input type="submit" value="Login" />
+                </form>
+            </>
+        )
+    }
+}
