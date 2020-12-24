@@ -47,6 +47,8 @@ export default class Login extends Component {
                     </label>
                     <input type="submit" value="Login" />
                 </form>
+                <br/>
+                <button onClick={this.props.toggleSignup}>Or Sign Up!</button>
             </>
         )
     }
