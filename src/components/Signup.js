@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import { Button, Form } from 'react-bootstrap';
 
 export default class Signup extends Component {
    
@@ -44,33 +45,28 @@ export default class Signup extends Component {
     render(){
         return(
             <>
-                <h1>This is my Signup Component</h1>
-                <form onSubmit={this.handleSubmit}>
-                <label>
-                    Email:
-                        <input type="email" name="email" onChange={this.handleChange} value={this.state.email} />
-                    </label><br /><br />
-                    <label> 
-                        Name:
-                        <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
-                    </label><br /><br />
-                    <label>
-                        Username:
-                        <input type="text" name="username" onChange={this.handleChange} value={this.state.username} />
-                    </label><br /><br />
-                    <label>
-                        Password:
-                        <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-                    </label><br /><br />
-                    <label>
-                        Password Confirmation:
-                        <input type="password" name="passwordConfirmation" onChange={this.handleChange} value={this.state.passwordConfirmation}/>
-                    </label>
-                    <input type="submit" value="Signup" />
-                </form>
-                <br />
-                Already have an account?
-                <button onClick={this.props.toggleSignup}> Login!</button>
+                    <h1 id="form-title">PERCENTAGE</h1> 
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group controlId="formName" className="mx-sm-5 mb-1">
+                        <Form.Control type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder="Name"></Form.Control>
+                    </Form.Group><br />
+                    <Form.Group controlId="formEmail" className="mx-sm-5 mb-1">
+                        <Form.Control type="email" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Email"></Form.Control>
+                    </Form.Group><br/>
+                    <Form.Group controlId="formUsername" className="mx-sm-5 mb-1">
+                        <Form.Control type="text" name="username" onChange={this.handleChange} value={this.state.username} placeholder="Username"></Form.Control>
+                    </Form.Group><br />
+                    <Form.Group controlId="formPassword" className="mx-sm-5 mb-1">
+                        <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password"></Form.Control>
+                    </Form.Group><br/>
+                    <Form.Group controlId="formPasswordConformation" className="mx-sm-5 mb-1">
+                        <Form.Control type="password" name="passwordConformation" onChange={this.handleChange} value={this.state.password} placeholder="Confirm Password"></Form.Control>
+                    </Form.Group><br/>
+                    <Button variant="secondary" type="submit" id="form-button">Login</Button> 
+                    </Form><br/>
+                <br/>
+                Already have an account? 
+               <Button onClick={this.props.toggleSignup} id="form-toggle">Log In</Button> 
             </>
         )
     }

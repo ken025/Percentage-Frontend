@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import { Button, Form } from 'react-bootstrap';
 
 export default class Login extends Component {
    
@@ -36,19 +37,19 @@ export default class Login extends Component {
         return(
             <>
                 <h1>This is my Login Component</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        username:
-                        <input type="text" name="username" onChange={this.handleChange} value={this.state.username} />
-                    </label>
-                    <label>
-                        Password:
-                        <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-                    </label>
-                    <input type="submit" value="Login" />
-                </form>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group controlId="formUsername" className="mx-sm-5 mb-2">
+                        <Form.Control type="username" name="username" onChange={this.handleChange} value={this.state.username} placeholder="Username"></Form.Control>
+                    </Form.Group><br />
+                    <Form.Group controlId="formPassword" className="mx-sm-5 mb-2">
+                        <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password"></Form.Control>
+                    </Form.Group>
+                    <br/>
+                    <Button variant="secondary" type="submit" id="form-button">Login</Button> 
+                </Form>
                 <br/>
-                <button onClick={this.props.toggleSignup}>Or Sign Up!</button>
+                Or
+                <Button onClick={this.props.toggleSignup}>Sign Up!</Button>
             </>
         )
     }

@@ -3,6 +3,10 @@ import './App.css';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
 import Signup from './components/Signup';
+// import { autologinRequest } from './services/requests';
+
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends Component {
@@ -18,7 +22,20 @@ class App extends Component {
     },
     signup: false
   }
-  
+
+  // componentDidMount(){
+  //   if (localStorage.token){
+  //     autologinRequest()
+  //     .then(response => {
+  //       if (!response.errors){
+  //         this.setUser(response)
+  //       } else {
+  //         alert(response.errors)
+  //       }
+  //     })
+  //   }
+  // }
+
   renderMainContainer = () => {
     return(
       // we cannot use if statements in jsx
@@ -38,18 +55,32 @@ class App extends Component {
     );
   }
 
-  setUser = (user) => this.setState({user: user.user})
+  setUser = (response) => {
+    this.setState({user: response.user})
+    localStorage.token = response.token
+  }
 
   toggleSignup = () => this.setState({signup: !this.state.signup})
 
+  logout = () => {
+    this.setState({
+      user: {
+        id: null,
+        name: "",
+        username: "",
+        email: "",
+        profile_img: "",
+        income: null
+      }
+      })
+      localStorage.clear("user_id")
+  }
+
   render() {
     return (
-    <>
-      <h1>
-        PERCENTAGE
-      </h1>
+    <div className="App">
       <main><this.renderMainContainer/></main>
-    </>
+    </div>
     );
   }
 }
