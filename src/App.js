@@ -3,7 +3,7 @@ import './App.css';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
 import Signup from './components/Signup';
-// import { autologinRequest } from './services/requests';
+import {autoLoginRequest} from './services/requests'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,18 +23,19 @@ class App extends Component {
     signup: false
   }
 
-  // componentDidMount(){
-  //   if (localStorage.token){
-  //     autologinRequest()
-  //     .then(response => {
-  //       if (!response.errors){
-  //         this.setUser(response)
-  //       } else {
-  //         alert(response.errors)
-  //       }
-  //     })
-  //   }
-  // }
+  componentDidMount(){
+    if (localStorage.token){
+      autoLoginRequest()
+      .then(response => {
+        console.log(response)
+        if (!response.errors){
+          this.setUser(response)
+        } else {
+          alert(response.errors)
+        }
+      })
+    }
+  }
 
   renderMainContainer = () => {
     return(
@@ -56,7 +57,7 @@ class App extends Component {
   }
 
   setUser = (response) => {
-    this.setState({user: response.user})
+    this.setState({user: response.user}) 
     localStorage.token = response.token
   }
 

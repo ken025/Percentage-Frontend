@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { signupRequest } from '../services/requests';
 
 export default class Signup extends Component {
    
@@ -20,14 +21,7 @@ export default class Signup extends Component {
         if (password === passwordConfirmation){
         // backend is expecting username and password params
         const body = {user: {name, email, username, password}}
-        fetch('http://localhost:3000/api/v1/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body),
-        })
-        .then(resp => resp.json())
+        signupRequest(body)
         .then(resp => {
             if (!resp.errors) {
                 this.props.setUser(resp)
@@ -51,7 +45,7 @@ export default class Signup extends Component {
                         <Form.Control type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder="Name"></Form.Control>
                     </Form.Group><br />
                     <Form.Group controlId="formEmail" className="mx-sm-5 mb-1">
-                        <Form.Control type="email" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Email"></Form.Control>
+                        <Form.Control type="email" name="email" onChange={this.handleChange} value={this.state.email} placeholder="Email"></Form.Control>
                     </Form.Group><br/>
                     <Form.Group controlId="formUsername" className="mx-sm-5 mb-1">
                         <Form.Control type="text" name="username" onChange={this.handleChange} value={this.state.username} placeholder="Username"></Form.Control>
@@ -59,8 +53,8 @@ export default class Signup extends Component {
                     <Form.Group controlId="formPassword" className="mx-sm-5 mb-1">
                         <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password"></Form.Control>
                     </Form.Group><br/>
-                    <Form.Group controlId="formPasswordConformation" className="mx-sm-5 mb-1">
-                        <Form.Control type="password" name="passwordConformation" onChange={this.handleChange} value={this.state.password} placeholder="Confirm Password"></Form.Control>
+                    <Form.Group controlId="formPasswordConfirmation" className="mx-sm-5 mb-1">
+                        <Form.Control type="password" name="passwordConfirmation" onChange={this.handleChange} value={this.state.passwordConfirmation} placeholder="Confirm Password"></Form.Control>
                     </Form.Group><br/>
                     <Button variant="secondary" type="submit" id="form-button">Login</Button> 
                     </Form><br/>

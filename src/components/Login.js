@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { loginRequest } from '../services/requests';
 
 export default class Login extends Component {
    
@@ -16,14 +17,7 @@ export default class Login extends Component {
         const { username, password} = this.state
         // backend is expecting username and password params
         const body = {user: {username: username, password: password}}
-        fetch('http://localhost:3000/api/v1/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body),
-        })
-        .then(resp => resp.json())
+            loginRequest(body)
         .then(resp => {
             if (!resp.errors) {
                 this.props.setUser(resp)
