@@ -4,6 +4,7 @@ import { savingsReducer } from '../reducers/savingsReducer'
 import SavingCard from '../components/SavingCard'
  
 const SavingCards = (props) => {
+    // console.log(props.savings)
     return(
         <div className="cards"> 
         Cards Go Here!

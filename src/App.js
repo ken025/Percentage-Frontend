@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import './App.css';
-import Welcome from './components/Welcome';
+// import Welcome from './components/Welcome';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import {autoLoginRequest} from './services/requests'
 import { connect } from "react-redux";
-import { setSavings } from './actions/actionCreator'
+import { setSavings, setExpenses, setMonthlies, logout } from './actions/actionCreator'
+import { Switch, Route } from 'react-router-dom'
+import SavingCards from './containers/SavingCards'
+import ExpenseCards from './containers/ExpenseCards'
+import MonthlyCards from './containers/MonthlyCards'
+import SavingPage from './components/SavingPage'
+import NavigationBar from './components/Navbar';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,6 +34,8 @@ class App extends Component {
   componentDidMount(){
 
     this.props.setSavings()
+    this.props.setExpenses()
+    this.props.setMonthlies()
 
     if (localStorage.token){
       autoLoginRequest()
@@ -46,8 +54,8 @@ class App extends Component {
     return(
       // we cannot use if statements in jsx
       this.state.user.id ? 
-      <Welcome/> :
-        this.state.signup ?
+      // <Welcome/> :
+      <NavigationBar logout={this.logout}/>:        this.state.signup ?
           <Signup setUser={this.setUser} toggleSignup={this.toggleSignup}/> :
           <Login setUser={this.setUser} toggleSignup={this.toggleSignup}/>
 
@@ -68,28 +76,35 @@ class App extends Component {
 
   toggleSignup = () => this.setState({signup: !this.state.signup})
 
-  logout = () => {
-    this.setState({
-      user: {
-        id: null,
-        name: "",
-        username: "",
-        email: "",
-        profile_img: "",
-        income: null
-      }
-      })
-      localStorage.clear("user_id")
-  }
+  // logout = () => {
+  //   this.setState({
+  //     user: {
+  //       id: null,
+  //       name: "",
+  //       username: "",
+  //       email: "",
+  //       profile_img: "",
+  //       income: null
+  //     }
+  //     })
+  //     localStorage.clear("user_id")
+  // }
 
   render() {
     return (
     <div className="App">
-      <main><this.renderMainContainer/></main>
+            <main><this.renderMainContainer/></main>
+            <button onClick={this.props.logout}>Logout!</button>
+      <Switch>
+        <Route path="/savings/:id" component={SavingPage}/>
+        <Route path="/savings" component={ SavingCards }/>
+        <Route path="/expenses" component={ ExpenseCards }/>
+        <Route path="/monthlies" component={ MonthlyCards }/>
+      </Switch>
     </div>
     );
   }
 }
 
 
-export default connect(null, { setSavings})(App);
+export default connect(null, { setSavings, setExpenses, setMonthlies, logout})(App);

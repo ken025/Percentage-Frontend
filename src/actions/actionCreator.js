@@ -12,3 +12,32 @@ export const setSavings = () => {
         })
     )}
 }
+
+export const setExpenses = () => {
+    return dispatch => {
+        fetch(API + "/expenses")
+        .then(resp => resp.json())
+        .then(expenses => dispatch({
+            type: "FETCH_EXPENSES",
+            payload: expenses
+        })
+    )}
+}
+
+export const setMonthlies = () => {
+    return dispatch => {
+        fetch(API + "/monthlies")
+        .then(resp => resp.json())
+        .then(monthlies => dispatch({
+            type: "FETCH_MONTHLIES",
+            payload: monthlies
+        })
+    )}
+}
+
+export const logout = () => {
+    return dispatch => {
+      localStorage.clear("token")
+      dispatch({type: "LOGOUT"})
+    }
+  }
