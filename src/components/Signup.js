@@ -56,7 +56,7 @@ export default class Signup extends Component {
                     <Form.Group controlId="formPasswordConfirmation" className="mx-sm-5 mb-1">
                         <Form.Control type="password" name="passwordConfirmation" onChange={this.handleChange} value={this.state.passwordConfirmation} placeholder="Confirm Password"></Form.Control>
                     </Form.Group><br/>
-                    <Button variant="secondary" type="submit" id="form-button">Login</Button> 
+                    <Button variant="secondary" type="submit" id="form-button">Sign Up</Button> 
                     </Form><br/>
                 <br/>
                 Already have an account? 
