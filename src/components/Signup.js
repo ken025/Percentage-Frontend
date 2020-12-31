@@ -39,7 +39,7 @@ export default class Signup extends Component {
     render(){
         return(
             <>
-                    <h1 id="form-title">PERCENTAGE</h1> 
+                    <h1 id="form-title" style={{background: '#82c7a5a9'}} >PERCENTAGE</h1> 
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formName" className="mx-sm-5 mb-1">
                         <Form.Control type="text" name="name" onChange={this.handleChange} value={this.state.name} placeholder="Name"></Form.Control>
@@ -56,7 +56,7 @@ export default class Signup extends Component {
                     <Form.Group controlId="formPasswordConfirmation" className="mx-sm-5 mb-1">
                         <Form.Control type="password" name="passwordConfirmation" onChange={this.handleChange} value={this.state.passwordConfirmation} placeholder="Confirm Password"></Form.Control>
                     </Form.Group><br/>
-                    <Button variant="secondary" type="submit" id="form-button">Sign Up</Button> 
+                    <Button variant="secondary" type="submit" id="form-button" >Sign Up</Button> 
                     </Form><br/>
                 <br/>
                 Already have an account? 
