@@ -6,12 +6,14 @@ import Signup from './components/Signup';
 import {autoLoginRequest} from './services/requests'
 import { connect } from "react-redux";
 import { setSavings, setExpenses, setMonthlies, logout } from './actions/actionCreator'
-import { Switch, Route } from 'react-router-dom'
-import SavingCards from './containers/SavingCards'
-import ExpenseCards from './containers/ExpenseCards'
-import MonthlyCards from './containers/MonthlyCards'
-import SavingPage from './components/SavingPage'
+// import { Switch, Route } from 'react-router-dom'
+// import SavingCards from './containers/SavingCards'
+// import ExpenseCards from './containers/ExpenseCards'
+// import MonthlyCards from './containers/MonthlyCards'
+// import SavingPage from './components/SavingPage'
 import NavigationBar from './components/Navbar';
+
+import Router from './components/Router'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -95,12 +97,14 @@ class App extends Component {
     <div className="App">
             <main><this.renderMainContainer/></main>
             <button onClick={this.props.logout}>Logout!</button>
-      <Switch>
+
+            <Router />
+      {/* <Switch>
         <Route path="/savings/:id" component={SavingPage}/>
         <Route path="/savings" component={ SavingCards }/>
-        <Route path="/expenses" component={ ExpenseCards }/>
+        <Route path="/expenses" component={ ExpenseContainer }/>
         <Route path="/monthlies" component={ MonthlyCards }/>
-      </Switch>
+      </Switch> */}
     </div>
     );
   }

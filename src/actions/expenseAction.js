@@ -1,7 +1,7 @@
 const API = "http://localhost:3000"
 
 export const fetchExpenses = () => {
-    return dispatch => {
+    return (dispatch) => {
         fetch(API + "/expenses")
         .then(resp => resp.json())
         .then(expenses => dispatch({ 
@@ -12,7 +12,7 @@ export const fetchExpenses = () => {
 }
 
 export const addExpense = expense => {
-    return dispatch => {
+    return (dispatch) => {
         fetch(API + "/expenses", {
             method: 'POST',
             body: JSON.stringify(expense),
@@ -21,7 +21,6 @@ export const addExpense = expense => {
         .then(resp => resp.json())
         .then(expense => dispatch({ 
             type: 'ADD_EXPENSE', 
-            payload: expense}
-        ))
+            payload: expense}))
     }
 }
