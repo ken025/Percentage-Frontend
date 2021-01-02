@@ -1,11 +1,7 @@
-const initialSavingsState = {
-   savings: []
-}
-
-export const savingsReducer = (state = initialSavingsState, action ) => {
+export const savingsReducer = (state = [], action ) => {
         switch(action.type){
             case 'FETCH_SAVINGS':
-                return {...state, savings: action.payload };
+                return action.payload;
             default:
                 return state
         }

@@ -8,9 +8,9 @@ import { addExpense } from '../actions/expenseAction'
 class ExpenseForm extends Component {
 
     state = { 
-        bill_name: "",
-        price: 0,
-        monthly_id: 1
+        name: "",
+        charge: 0,
+        user_id: 1
     }
 
     handleChange = e => {
@@ -30,10 +30,10 @@ class ExpenseForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}> 
                 <label>Bill: </label>
-                <input type="text" value={this.state.bill_name} onChange={this.handleChange} name="bill_name"/>
+                <input type="text" value={this.state.name} onChange={this.handleChange} name="name"/>
 
                 <label>Charge: </label>
-                <input type="number" value={this.state.price} onChange={this.handleChange} name="price"/>
+                <input type="number" value={this.state.charge} onChange={this.handleChange} name="charge"/>
                 <input type='submit' value="Add Expense" />
             </form>
         );

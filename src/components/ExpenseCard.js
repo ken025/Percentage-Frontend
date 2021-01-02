@@ -3,13 +3,13 @@ import React from 'react'
 
 const ExpenseCard = (props) => {
     console.log(props)
-    const {id, bill_name, price } = props
-    console.log(bill_name)
+    const {id, name, charge } = props
+    console.log(name)
     return(
         <>
         <div className="card" style={{background: '#82c7a5a9'}}>
-            <h1>{bill_name}</h1><br />
-            <h3>{price}</h3><br />
+            <h1>{name}</h1><br />
+            <h3>{charge}</h3><br />
         </div><br />
         </>
     )

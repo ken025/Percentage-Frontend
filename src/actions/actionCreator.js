@@ -24,16 +24,6 @@ export const setExpenses = () => {
     )}
 }
 
-export const setMonthlies = () => {
-    return dispatch => {
-        fetch(API + "/monthlies")
-        .then(resp => resp.json())
-        .then(monthlies => dispatch({
-            type: "FETCH_MONTHLIES",
-            payload: monthlies
-        })
-    )}
-}
 
 export const logout = () => {
     return dispatch => {
