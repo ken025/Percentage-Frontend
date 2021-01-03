@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import { fetchExpenses } from '../actions/expenseAction'
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseList from '../components/ExpenseList';
 
 
 class ExpenseContainer extends Component {
-
-    componentDidMount(){
-        this.props.fetchExpenses()
-    }
 
     render() {
         return (
@@ -32,4 +27,4 @@ const mapStateToProps = (state) => (
     {user: state.user}
   )
 
-export default connect(mapStateToProps, { fetchExpenses })(ExpenseContainer);
+export default connect(mapStateToProps)(ExpenseContainer);
