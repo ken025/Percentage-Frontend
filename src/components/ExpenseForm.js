@@ -45,6 +45,6 @@ class ExpenseForm extends Component {
 
 const mapStateToProps = (state) => (
     {user: state.user}
-  )
+)
 
 export default connect(mapStateToProps, { addExpense })(ExpenseForm);

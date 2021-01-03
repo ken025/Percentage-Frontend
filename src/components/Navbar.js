@@ -1,4 +1,4 @@
-import {Navbar, Nav, Button} from 'react-bootstrap'
+import {Navbar, Nav, Button, NavLink} from 'react-bootstrap'
 
 
 function NavigationBar(props){
@@ -10,7 +10,8 @@ function NavigationBar(props){
             <Nav.Link href="http://localhost:3001/expenses/" id="nav-text">Expenses</Nav.Link>
             <Nav.Link href="http://localhost:3001/savings/" id="nav-text" >Savings</Nav.Link>
             <Nav.Link href="#" id="nav-text" >Resources</Nav.Link>
-            <Button inline variant="outline-light" onClick={props.logout} id="nav-logout">Logout</Button>
+            <Nav.Link href="#" id="nav-text"> Profile </Nav.Link>
+            <Button inline="true" variant="outline-light" onClick={props.logout} id="nav-logout">Logout</Button>
         </Nav>
     </Navbar>
     )

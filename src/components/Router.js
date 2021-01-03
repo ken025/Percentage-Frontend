@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import SavingPage from './SavingPage'
 import Home from './Home'
 import ExpenseContainer from '../containers/ExpenseContainer'
+import UserContainer from '../containers/UserContainer';
 
 const Router = () => {
     return (
@@ -11,7 +12,8 @@ const Router = () => {
             <Route exact path='/' component={Home} />
             <Route path="/savings/:id" component={SavingPage}/>
         {/* <Route path="/savings" component={ SavingCards }/> */}
-        <   Route path="/expenses" component={ ExpenseContainer }/>
+            <Route path="/expenses" component={ ExpenseContainer }/>
+            <Route path="/profile" component={ UserContainer } />
       </Switch>
     );
 };

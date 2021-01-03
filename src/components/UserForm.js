@@ -21,17 +21,12 @@ const Login = (props) => {
     }
 
     return(
-        <>
-          {signup ?
           <>
-           <h1 id="form-title" style={{background: '#82c7a5a9'}} >PERCENTAGE</h1> 
+           <h1 id="form-title" style={{background: '#82c7a5a9'}} >Edit Info</h1> 
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formName" className="mx-sm-5 mb-1">
                         <Form.Control type="text" name="name" onChange={handleLoginFormChange} value={name} placeholder="Name"></Form.Control>
                     </Form.Group><br />
-                    <Form.Group controlId="formEmail" className="mx-sm-5 mb-1">
-                        <Form.Control type="email" name="email" onChange={handleLoginFormChange} value={email} placeholder="Email"></Form.Control>
-                    </Form.Group><br/>
                     <Form.Group controlId="formUsername" className="mx-sm-5 mb-1">
                         <Form.Control type="text" name="username" onChange={handleLoginFormChange} value={username} placeholder="Username"></Form.Control>
                     </Form.Group><br />
@@ -41,36 +36,13 @@ const Login = (props) => {
                     <Form.Group controlId="formPasswordConfirmation" className="mx-sm-5 mb-1">
                         <Form.Control type="password" name="passwordConfirmation" onChange={handleLoginFormChange} value={passwordConfirmation} placeholder="Confirm Password"></Form.Control>
                     </Form.Group><br/>
-                    <Button variant="secondary" type="submit" id="form-button" >Sign Up</Button> 
+                    <Button variant="secondary" type="submit" id="form-button" >Update</Button> 
                     </Form><br/>
-                <br/>
-                Already have an account? 
-               <Button onClick={toggleSignup} id="form-toggle">Log In</Button> 
                 </>
-                :
-                <>
-                 <h1>This is my Login Component</h1>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group controlId="formUsername" className="mx-sm-5 mb-2">
-                        <Form.Control type="username" name="username" onChange={handleLoginFormChange} value={username} placeholder="Username"></Form.Control>
-                    </Form.Group><br />
-                    <Form.Group controlId="formPassword" className="mx-sm-5 mb-2">
-                        <Form.Control type="password" name="password" onChange={handleLoginFormChange} value={password} placeholder="Password"></Form.Control>
-                    </Form.Group><br/>
-                        <Button variant="secondary" type="submit" id="form-button">Login</Button> 
-                </Form>
-                <br/>
-                Or
-                <Button onClick={toggleSignup}>Sign Up!</Button>
-                </>
-
-            } 
-        </>
     )
 }
 
 const mapStateToProps = (state) => ({
-    signup: state.user.signup,
     form: state.user.loginForm
   })
   
