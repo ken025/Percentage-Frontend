@@ -10,14 +10,15 @@ class ExpenseForm extends Component {
     state = { 
         name: "",
         charge: 0,
-        user_id: 1
+        user_id: null
     }
 
     handleChange = e => {
         const { name, value } = e.target
-
+        const userId = this.props.user.id
         this.setState({
-            [name]: value
+            [name]: value,
+            user_id: userId
         })
     }
 
@@ -27,6 +28,7 @@ class ExpenseForm extends Component {
     }
 
     render() {
+        console.log(this.props.user.id)
         return (
             <form onSubmit={this.handleSubmit}> 
                 <label>Bill: </label>
@@ -35,9 +37,14 @@ class ExpenseForm extends Component {
                 <label>Charge: </label>
                 <input type="number" value={this.state.charge} onChange={this.handleChange} name="charge"/>
                 <input type='submit' value="Add Expense" />
+
             </form>
         );
     }
 }
 
-export default connect(null, { addExpense })(ExpenseForm);
+const mapStateToProps = (state) => (
+    {user: state.user}
+  )
+
+export default connect(mapStateToProps, { addExpense })(ExpenseForm);
