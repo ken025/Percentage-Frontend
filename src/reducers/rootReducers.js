@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
 import { expensesReducer } from './expensesReducer'
 import { savingsReducer } from './savingsReducer'
-import { usersReducer } from './userReducer'
+import { userReducer } from './userReducer'
+
 
 export const rootReducer = combineReducers({
-    users: usersReducer,
+    user: userReducer,
     expenses: expensesReducer,
     savings: savingsReducer
 })

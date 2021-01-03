@@ -1,7 +1,7 @@
-import {Navbar, Nav} from 'react-bootstrap'
+import {Navbar, Nav, Button} from 'react-bootstrap'
 
 
-function NavigationBar(){
+function NavigationBar(props){
     return (
     <Navbar sticky="top" id="navbar">
         <Navbar.Brand href="#" id="nav-brand">PERCENTAGE</Navbar.Brand>
@@ -10,6 +10,7 @@ function NavigationBar(){
             <Nav.Link href="http://localhost:3001/expenses/" id="nav-text">Expenses</Nav.Link>
             <Nav.Link href="http://localhost:3001/savings/" id="nav-text" >Savings</Nav.Link>
             <Nav.Link href="#" id="nav-text" >Resources</Nav.Link>
+            <Button inline  onClick={props.logout} id="nav-logout">Logout</Button>
         </Nav>
     </Navbar>
     )

@@ -1,7 +1,12 @@
 const initialLoginForm = {
     username: "",
     password: "",
-    passwordConfirmation: ""
+    passwordConfirmation: "",
+    email: "",
+    profile_img: "",
+    name: "",
+    income: null,
+    balance: null
   }
   
   const initialState = {
@@ -9,11 +14,6 @@ const initialLoginForm = {
     username: null,
     signup: false,
     loginForm: initialLoginForm,
-    email: "",
-    profile_img: "",
-    name: "",
-    income: null,
-    balance: null
   }
   
   export const userReducer = (state=initialState, action) => {

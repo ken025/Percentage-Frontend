@@ -1,5 +1,4 @@
 import React from 'react'
-//img_url => total_saved & total_price
 
 const ExpenseCard = (props) => {
     console.log(props)
@@ -9,7 +8,7 @@ const ExpenseCard = (props) => {
         <>
         <div className="card" style={{background: '#82c7a5a9'}}>
             <h1>{name}</h1><br />
-            <h3>{charge}</h3><br />
+            <h3>${charge}</h3><br />
         </div><br />
         </>
     )

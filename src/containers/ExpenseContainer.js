@@ -14,13 +14,22 @@ class ExpenseContainer extends Component {
 
     render() {
         return (
+            this.props.user.id 
+             ?
             <div>
                 Expense Container
                 <ExpenseForm/>
                 <ExpenseList/>
             </div>
+            :
+            <>
+            </>
         );
     }
 }
 
-export default connect(null, { fetchExpenses })(ExpenseContainer);
+const mapStateToProps = (state) => (
+    {user: state.user}
+  )
+
+export default connect(mapStateToProps, { fetchExpenses })(ExpenseContainer);
