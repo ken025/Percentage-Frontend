@@ -5,8 +5,8 @@ const initialLoginForm = {
     email: "",
     profile_img: "",
     name: "",
-    income: null,
-    balance: null
+    income: 0,
+    balance: 0
   }
   
   const initialState = {

@@ -14,6 +14,7 @@ class ExpenseContainer extends Component {
             <div>
                 Expense Container
                 <ExpenseForm/>
+                <br />
                 <ExpenseList/>
             </div>
             :

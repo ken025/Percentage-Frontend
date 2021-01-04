@@ -19,6 +19,33 @@ export const autoLogin = () => {
     })
     }
   }
+
+  export const sendUpdateProfile = (userData) => {
+    return dispatch => {
+      // [0] = user object(params)
+      // [1] = user id 
+            const body = {user: userData[0]}
+            const id = userData[1]
+            console.log("id", userData[0])
+          fetch(API + '/api/v1/users/' + id, {
+            method: 'PATCH', 
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
+          })
+          .then(response => response.json())
+          .then(response => {
+            localStorage.token = response.token
+            dispatch({
+            type: "SET_USER",
+            payload: {user: response.user}
+          })
+        })
+        }
+      }
+    
+
   export const handleLoginFormChange = (e) => ({
     type: "LOGIN_FORM_CHANGE",
     payload: {name: e.target.name, value: e.target.value}
