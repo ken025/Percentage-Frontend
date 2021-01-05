@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Demo from '../components/DoughnutChart';
 
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseList from '../components/ExpenseList';
@@ -16,6 +17,8 @@ class ExpenseContainer extends Component {
                 <ExpenseForm/>
                 <br />
                 <ExpenseList/>
+                <br />
+                <Demo/>
             </div>
             :
             <>
