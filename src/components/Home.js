@@ -7,14 +7,14 @@ class HomePage extends Component {
 // const Home = () => {
     render() {
         return (
-            this.props.user.id 
-            ?
+            // this.props.user.id 
+            // ?
            <div>
                HOME PAGE BOI
         </div>
-            :
-            <>
-            </>
+            // :
+            // <>
+            // </>
         );
     }
 }
