@@ -10,7 +10,7 @@ const Accounts = (props) => {
         <li key={account.id}>
           <Link to={`/accounts/${account.id}`}>{account.name} - ${account.balance}</Link>
         </li> )}
-        <Link to='/accounts/new'> Add Account</Link>
+        <Link to='/accounts/new'> Add Account</Link>  
     </div>
 
   )
