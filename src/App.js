@@ -9,7 +9,7 @@
 // import { fetchExpenses } from './actions/expenseAction'
 // import NavigationBar from './components/Navbar';
 
-// import Router from './components/Router'
+import Router from './components/Router'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -71,6 +71,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <AccountsContainer/>
+        <Router />
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import {Navbar, Nav, Button, NavLink} from 'react-bootstrap'
 
-
 // function NavigationBar(props){
 //     return (
 //     <Navbar sticky="top" id="navbar">

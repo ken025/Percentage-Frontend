@@ -1,17 +1,23 @@
 import React from 'react'
 import {Route, Link} from 'react-router-dom'
 import Account from './Account'
+import {ListGroup, Button} from 'react-bootstrap'
 
 const Accounts = (props) => {
 
   return (
-    <div>
+    <>
+      <ListGroup>
       {props.accounts.map(account =>
-        <li key={account.id}>
-          <Link to={`/accounts/${account.id}`}>{account.name} - ${account.balance}</Link>
-        </li> )}
-        <Link to='/accounts/new'> Add Account</Link>  
-    </div>
+        <ListGroup.Item key={account.id} id="list">
+         <h3><Link to={`/accounts/${account.id}`}>{account.name} - ${account.balance}</Link></h3> 
+        </ListGroup.Item>
+        )}
+        {/* <button href="http://localhost:3001/accounts/new">Add Account</button> */}
+        <Link to='/accounts/new'><Button>Add Account</Button> </Link>  
+        </ListGroup>
+    </>
+    
 
   )
 }
