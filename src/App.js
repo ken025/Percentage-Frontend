@@ -11,7 +11,7 @@
 
 // import Router from './components/Router'
 
-// import './App.css';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import AccountsContainer from './containers/AccountsContainer'
