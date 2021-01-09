@@ -13,12 +13,9 @@ const Accounts = (props) => {
          <h3><Link to={`/accounts/${account.id}`}>{account.name} - ${account.balance}</Link></h3> 
         </ListGroup.Item>
         )}
-        {/* <button href="http://localhost:3001/accounts/new">Add Account</button> */}
         <Link to='/accounts/new'><Button>Add Account</Button> </Link>  
         </ListGroup>
     </>
-    
-
   )
 }
 

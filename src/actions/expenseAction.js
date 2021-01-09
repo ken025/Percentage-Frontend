@@ -13,7 +13,7 @@ export const fetchExpenses = () => {
 
 export const addExpense = (expense, accountId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/accounts/${accountId}/expenses`, {
+    fetch(API + `/${accountId}/expenses`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -25,20 +25,21 @@ export const addExpense = (expense, accountId) => {
         if (account.error) {
           alert(account.error)
         } else {
-          dispatch({type: 'ADD_EXPENSE', payload: account})
+          dispatch({type: 'ADD_EXPENSE',
+           payload: account})
         }
       }
     )
   }
 }
-      
 
       export const deleteExpense = (expenseId, accountId) => {
         return (dispatch) => {
-          return fetch(`http://localhost:3000/accounts/${accountId}/expenses/${expenseId}`, {
+          return fetch(API + `/${accountId}/expenses/${expenseId}`, {
             method: 'DELETE'
           })
           .then(response => response.json())
-          .then(account => dispatch({type: 'DELETE_EXPENSE', payload: account}))
+          .then(account => dispatch({type: 'DELETE_EXPENSE', 
+          payload: account}))
         }
       }

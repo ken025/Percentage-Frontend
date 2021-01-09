@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Demo from './DoughnutChart';
+
 
 
 class Home extends Component { 
@@ -11,6 +13,7 @@ class Home extends Component {
             // ?
            <div>
                <h1>HOME PAGE BOI</h1>
+               <Demo/>
         </div>
             // :
             // <>
