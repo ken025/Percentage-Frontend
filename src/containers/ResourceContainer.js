@@ -1,8 +1,16 @@
 import React, { Component} from 'react'
 import Resources from '../components/Resources'
 
+// import {connect} from 'react-redux'
+
+// import { fetchResources } from '../actions/resourceAction'
+
 class ResourceContainer extends Component {
   
+    // componentDidMount(){
+    //     this.props.fetchResources()
+    //   }
+
     render() {
         return(      
             <div >
@@ -15,7 +23,12 @@ class ResourceContainer extends Component {
             </div>
         )
     }
-
 }   
 
-export default ResourceContainer;
+// const mapStateToProps = (state) => ({
+//     resources: state.resources
+// })
+
+// export default connect(mapStateToProps, {fetchResources})(ResourceContainer);
+
+export default ResourceContainer

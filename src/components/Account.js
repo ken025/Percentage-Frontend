@@ -12,7 +12,7 @@ const Account = (props) => {
   console.log("account", account)
 
   // handleDelete = (account) => {
-  //   this.props.deleteExpense(expense.id, expense.account_id)
+  //   peops.deleteAcount(expense.id, expense.account_id)
   // }
 
   return (

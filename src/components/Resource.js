@@ -1,5 +1,6 @@
+import { List } from '@material-ui/core'
 import React from 'react'
-import {Card} from 'react-bootstrap'
+import {ListGroup, Card, Accordion, Button} from 'react-bootstrap'
 
 const Resource = (props) => {
     console.log(props)
@@ -8,11 +9,18 @@ const Resource = (props) => {
     console.log(title)
     return(
         <>
-        <Card>
-            <Card.Title id="card-title">{title}</Card.Title>
-            <Card.Body>{source} - {link} </Card.Body>
-            <br/>
-        </Card>
+<Accordion defaultActiveKey="0">
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="0">
+      {title}
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="0">
+      <Card.Link href={link}> Link to Source: {source}</Card.Link>
+    </Accordion.Collapse>
+  </Card>
+</Accordion>
         </>
     )
 }

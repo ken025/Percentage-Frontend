@@ -37,16 +37,16 @@ export const addAccount = (data) => {
     }
   }
 
-  // export const deleteAccount = (accountId) => {
-  //   return (dispatch) => {
-  //     return fetch(API + `/accounts/${accountId}`, {
-  //       method: 'DELETE'
-  //     })
-  //     .then(response => response.json())
-  //     .then(account => dispatch({type: 'DELETE_ACCOUNT', 
-  //     payload: account}))
-  //   }
-  // }
+  export const deleteAccount = (accountId) => {
+    return (dispatch) => {
+      return fetch(API + `/accounts/${accountId}`, {
+        method: 'DELETE'
+      })
+      .then(response => response.json())
+      .then(account => dispatch({type: 'DELETE_ACCOUNT', 
+      payload: account.id}))
+    }
+  }
 
   export function fetchAccounts() {
     return (dispatch) => {

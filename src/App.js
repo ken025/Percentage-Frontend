@@ -14,14 +14,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import AccountsContainer from './containers/AccountsContainer'
 import { fetchAccounts } from './actions/accountAction';
-
+import { fetchResources } from './actions/resourceAction'
 
 class App extends Component {
 
   componentDidMount(){
     localStorage.token && this.props.autoLogin()
 
-    // this.props.fetchResoucers()
+    this.props.fetchResources()
     this.props.fetchAccounts()
   }
 
@@ -53,4 +53,4 @@ const mapStateToProps = (state) => (
   
 
 
-export default connect(mapStateToProps, { fetchAccounts, autoLogin, logout})(App);
+export default connect(mapStateToProps, { fetchAccounts, fetchResources, autoLogin, logout})(App);

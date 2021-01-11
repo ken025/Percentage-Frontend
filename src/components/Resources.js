@@ -7,10 +7,9 @@ import {CardColumns} from 'react-bootstrap'
 
 const Resources = (props) => {
 
-    console.log("Resources",props)
+    console.log("Resources", props)
     return(
-        <CardColumns>
-            
+        <CardColumns id="res-cards">
         {props.resources.map(resource => <Resource key = {resource.id}  {...resource}/>)}
         </CardColumns>
     )
