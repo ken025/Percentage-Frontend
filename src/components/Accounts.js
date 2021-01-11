@@ -1,10 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {Route, Link} from 'react-router-dom'
 import Account from './Account'
 import {ListGroup, Button} from 'react-bootstrap'
 
 const Accounts = (props) => {
-
+console.log("accnt", props)
   return (
     <>
       <ListGroup>
@@ -19,4 +20,8 @@ const Accounts = (props) => {
   )
 }
 
-export default Accounts
+const mapStateToProps = (state) => ({
+  accounts: state.accounts
+})
+
+export default connect(mapStateToProps)(Accounts)

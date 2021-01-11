@@ -71,4 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## FUTURE PLANS 
 - add available balance that changs with every input into expenses 
-- get rid of vote feature
+- add a track(history) to the inputs to the account

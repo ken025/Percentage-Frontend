@@ -1,38 +1,31 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Route, Switch} from 'react-router-dom'
-import {fetchAccounts} from '../actions/accountAction'
 import Accounts from '../components/Accounts'
-import Account from '../components/Account'
-import AccountInput from '../components/AccountInput'
-import NavigationBar from '../components/NavigationBar'
 
 class AccountsContainer extends React.Component {
 
-  componentDidMount() {
-    this.props.fetchAccounts()
-  }
-
   render() {
       return (
+        this.props.user.id 
+        ?
           <div>
-            <NavigationBar/>
-            <Switch>
-              <Route path='/accounts/new' component={AccountInput}/>
-                                                                            {/* Passing in props */}
-              <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>}/>
-              <Route path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>}/>
-            </Switch>
+             <section id="home-heading" className="p-5">
+                    <div class="dark-overlay">
+                        <h1 id="heading-title">ACCOUNTS</h1>
+                        </div>
+              </section>
+              <Accounts/>       
+            </div>
+            :
+            <>
+            </>
+        )
+    }
 
-          </div>
-      )
-  }
 }
 
-const mapStateToProps = state => {
-  return {
-    accounts: state.accounts
-  }
-}
+const mapStateToProps = (state) => (
+    {user: state.users}
+)      
 
-export default connect(mapStateToProps, {fetchAccounts})(AccountsContainer)
+export default connect(mapStateToProps, {  } )(AccountsContainer)

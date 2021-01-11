@@ -5,8 +5,8 @@ import { editAccount } from '../actions/accountAction'
 class AccountEdit extends React.Component {
 
   state = {
-    name: '',
-    balance: 0
+    name: "",
+    balance: ""
   }
 
   handleChange = (event) => {
@@ -16,23 +16,23 @@ class AccountEdit extends React.Component {
   }
 
   handleSubmit = (event) => {
-    event.preventDefault()
     let account = {...this.state, id: this.props.account.id}
     this.props.editAccount(account)
     this.setState({
       name: '',
-      balance: 0
+      balance: ''
     })
   }
 
   render() {
+    console.log("edit props", this.props)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Edit Name: </label>
           <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
           <label>Edit Balance: </label>
-          <input type='text' placeholder='Balance' value={this.state.balance} name="balance" onChange={this.handleChange}/><br/>
+          <input type='number' placeholder='Balance' value={this.state.balance} name="balance" onChange={this.handleChange}/><br/>
           <input type="submit"/>
         </form>
       </div>

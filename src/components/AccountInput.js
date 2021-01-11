@@ -6,7 +6,7 @@ class AccountInput extends React.Component {
 
   state = {
     name: '',
-    balance: 0
+    balance: ''
   }
 
   handleChange = (event) => {
@@ -20,8 +20,9 @@ class AccountInput extends React.Component {
     this.props.addAccount(this.state)
     this.setState({
       name: '',
-      balance: 0
+      balance: ''
     })
+    this.props.history.push('/accounts');
   }
 
   render() {
@@ -31,7 +32,7 @@ class AccountInput extends React.Component {
           <label>Account Name: </label>
           <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
           <label>Available Balance: </label>
-          <input type='text' placeholder='Balance' value={this.state.balance} name="balance" onChange={this.handleChange}/><br/>
+          <input type='number' placeholder='Balance' value={this.state.balance} name="balance" onChange={this.handleChange}/><br/>
           <input type="submit"/>
         </form>
       </div>

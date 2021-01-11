@@ -1,13 +1,11 @@
-// import React, { Component } from 'react'
-// import './App.css';
+import React, { Component } from 'react'
+import './App.css';
 
-// import { autoLogin, logout } from './actions/userActions'
-// // import { autoLogin, logout } from './actions/userActions';
-// import Login from './components/Login';
+import { autoLogin, logout } from './actions/userActions';
+import Login from './components/Login';
 
-// import { connect } from "react-redux";
-// import { fetchExpenses } from './actions/expenseAction'
-// import NavigationBar from './components/Navbar';
+import { connect } from "react-redux";
+import NavigationBar from './components/NavigationBar';
 
 import Router from './components/Router'
 
@@ -15,67 +13,44 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import AccountsContainer from './containers/AccountsContainer'
+import { fetchAccounts } from './actions/accountAction';
 
 
-// class App extends Component {
+class App extends Component {
 
-//   // componentDidMount(){
-//   //   localStorage.token && this.props.autoLogin()
+  componentDidMount(){
+    localStorage.token && this.props.autoLogin()
 
-//   //   // this.props.setSavings()
-//   //   this.props.fetchExpenses()
-//   // }
+    // this.props.fetchResoucers()
+    this.props.fetchAccounts()
+  }
 
-//   // renderMainContainer = () => {
-//   //   return(
-//   //     // this.props.user.id 
-//   //     // ?
-//   //     //    <NavigationBar logout={this.props.logout}/>
+  renderMainContainer = () => {
+    return(
+      this.props.user.id 
+      ?
+         <NavigationBar logout={this.props.logout}/>
          
-//   //     // :
-//   //       <Login/>
+      :
+        <Login/>
 
-//   //   )
-//   // }  
-
-//   render() {
-//     return (
-//     <div className="App">
-//         <AccountsContainer/>
-//       {/* <main>{this.renderMainContainer()}</main> */}
-//         <Router />
-//     </div>
-//     );
-//   }
-// }
-  
-// const mapStateToProps = (state) => (
-//   {user: state.user}
-// )
-  
-
-
-// export default connect(mapStateToProps, { fetchExpenses, autoLogin, logout})(App);
-
-
-
-
-
-import React from 'react';
-import {connect} from 'react-redux'
-import AccountsContainer from './containers/AccountsContainer'
-
-class App extends React.Component {
+    )
+  }  
 
   render() {
     return (
-      <div className="App">
-        <AccountsContainer/>
-        <Router />
-      </div>
+    <div className="App">
+      <main>{this.renderMainContainer()}</main>
+      <Router />
+    </div>
     );
   }
 }
+  
+const mapStateToProps = (state) => (
+  {user: state.user}
+)
+  
 
 
-export default App;
+export default connect(mapStateToProps, { fetchAccounts, autoLogin, logout})(App);
