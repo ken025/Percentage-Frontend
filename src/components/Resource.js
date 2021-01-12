@@ -16,7 +16,7 @@ const Resource = (props) => {
                 </Accordion.Toggle>
               </Card.Header>
               <Accordion.Collapse eventKey="0">
-                <Card.Link href={link}> Link to Source: {source}</Card.Link>
+                <Card.Link href={link} target="_blank"> Link to Source: {source}</Card.Link>
               </Accordion.Collapse>
             </Card>
           </Accordion>

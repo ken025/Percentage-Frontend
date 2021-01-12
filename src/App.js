@@ -14,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { fetchAccounts } from './actions/accountAction';
 import { fetchResources } from './actions/resourceAction'
+import Footer from './components/Footer';
 
 class App extends Component {
 
@@ -32,10 +33,11 @@ class App extends Component {
       <NavigationBar logout={this.props.logout}/>
         <Router />
       </>
-         
       :
-        <Login/>
-
+      <>
+        <Login/><br />
+        <br /><Footer/>
+        </>
     )
   }  
 

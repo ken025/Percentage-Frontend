@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+import { GoRepoClone } from 'react-icons/go'
 import {GiPayMoney, GiCommercialAirplane } from 'react-icons/gi'
-import { AiOutlineFileSearch} from 'react-icons/ai'
-import { HiOutlineClipboard } from 'react-icons/hi'
+import { AiOutlineFileSearch, AiOutlineGithub} from 'react-icons/ai'
+import { HiOutlineClipboard, HiOutlineMail } from 'react-icons/hi'
 import { MdAddBox } from 'react-icons/md'
-import {Carousel, Card, CardGroup} from 'react-bootstrap'
+import { FaLinkedin } from 'react-icons/fa'
+import {Carousel, Card, CardGroup, ListGroup} from 'react-bootstrap'
+import Footer from './Footer';
 
 class Home extends Component { 
 
@@ -26,7 +30,6 @@ class Home extends Component {
                 <Carousel.Item>
                 <img 
                    id="carousel-item"
-                    // src="https://image.freepik.com/free-vector/people-carrying-jigsaw-pieces-donut-chart_53876-64616.jpg"
                     src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2020/09/GettyImages-502521786.jpg-savings-accounts-basics-1440x864.jpg"
                     alt="Save for Yourself"
                   />
@@ -46,20 +49,22 @@ class Home extends Component {
                 </Carousel.Item>
               </Carousel><br />
 
-              <CardGroup>
-                <Card id='home-card'>
-                  <h1> <MdAddBox/> </h1>
-                  <h5> Add Accounts to Track your Savings Progress</h5>
-                </Card>
-                <Card id='home-card'>
-                  <h1><HiOutlineClipboard/></h1>
-                  <h5>Write Down your Ongoing Expenses to Keep Better Track</h5>
-                </Card>
-                <Card id="home-card">
-                  <h1> <AiOutlineFileSearch/> </h1>
-                  <h5>Browse Through Resources to Help you Save More</h5>
-                </Card>
-              </CardGroup>
+              <ListGroup>
+                <ListGroup.Item id='home-card'>
+                  <h4> <MdAddBox size={50} /> &emsp;
+                  Add Accounts to Track your Savings Progress</h4>
+                </ListGroup.Item><br />
+                <ListGroup.Item id='home-card'>
+                  <h4><HiOutlineClipboard size={50}/> &emsp; 
+                  Write Down your Ongoing Expenses to Keep Better Track</h4>
+                </ListGroup.Item><br />
+                <ListGroup.Item id="home-card">
+                  <h4> <AiOutlineFileSearch size={50} /> &emsp; 
+                 Browse Through Resources to Help you Save More</h4>
+                </ListGroup.Item>
+              </ListGroup><br />
+              <br />
+             <Footer/>
         </div>
         );
     }

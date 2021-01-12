@@ -88,3 +88,12 @@ background: #00000083;
 #form-title{
  background: #82c7a5a9
 }
+
+#about-card{
+  background-color: #82d4bcbb;
+  color: black;
+}
+
+/* #about-cards{
+  sticky: bottom
+} */

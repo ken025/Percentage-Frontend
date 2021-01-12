@@ -28,7 +28,7 @@ const Login = (props) => {
           {signup 
           ?
           <>
-           <h1 id="form-title">PERCENTAGE <FaPercentage/></h1> 
+           <h1 id="form-title">PERCENTAGE  <FaPercentage/></h1> 
             <Home/> <br />
             <h3>Sign Up</h3>
                 <Form onSubmit={handleSubmit}>
