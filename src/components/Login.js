@@ -22,9 +22,11 @@ const Login = (props) => {
 
     return(
         <>
-          {signup ?
+          {signup 
+          ?
           <>
            <h1 id="form-title" style={{background: '#82c7a5a9'}} >PERCENTAGE</h1> 
+            <h3>Sign Up</h3>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formName" className="mx-sm-5 mb-1">
                         <Form.Control type="text" name="name" onChange={handleLoginFormChange} value={name} placeholder="Name"></Form.Control>
@@ -49,7 +51,8 @@ const Login = (props) => {
                 </>
                 :
                 <>
-                 <h1>This is my Login Component</h1>
+                     <h1 id="form-title" style={{background: '#82c7a5a9'}}> PERCENTAGE </h1> 
+                        <h3> Log In</h3>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formUsername" className="mx-sm-5 mb-2">
                         <Form.Control type="username" name="username" onChange={handleLoginFormChange} value={username} placeholder="Username"></Form.Control>
@@ -60,7 +63,7 @@ const Login = (props) => {
                         <Button variant="secondary" type="submit" id="form-button">Login</Button> 
                 </Form>
                 <br/>
-                Or
+                Or 
                 <Button onClick={toggleSignup}>Sign Up!</Button>
                 </>
 

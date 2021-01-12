@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import AccountsContainer from './containers/AccountsContainer'
 import { fetchAccounts } from './actions/accountAction';
 import { fetchResources } from './actions/resourceAction'
+import Home from './components/Home';
 
 class App extends Component {
 
@@ -29,7 +30,10 @@ class App extends Component {
     return(
       this.props.user.id 
       ?
-         <NavigationBar logout={this.props.logout}/>
+      <>
+      <NavigationBar logout={this.props.logout}/>
+        <Router />
+      </>
          
       :
         <Login/>
@@ -41,7 +45,6 @@ class App extends Component {
     return (
     <div className="App">
       <main>{this.renderMainContainer()}</main>
-      <Router />
     </div>
     );
   }

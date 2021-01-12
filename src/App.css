@@ -53,6 +53,34 @@
 }
 
 #res-card{
-  background-color: #242424
+  background-color: #ffffffc7
 }
 
+#home-card{
+  background-color: #24242446
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#car-text{
+background: #00000083;
+}
+
+#car-text-1{
+  background: #000000cc;
+  }
+
+.carousel-item {
+  height: 450px;
+}
+#carousel-item {
+  background-size: cover;
+  width: 100%;
+}

@@ -9,7 +9,7 @@ const Resources = (props) => {
 
     console.log("Resources", props)
     return(
-        <CardColumns id="res-cards">
+        <CardColumns>
         {props.resources.map(resource => <Resource key = {resource.id}  {...resource}/>)}
         </CardColumns>
     )

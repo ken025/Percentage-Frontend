@@ -11,12 +11,8 @@ const Account = (props) => {
   let account = props.accounts.filter(account => account.id == props.match.params.id)[0]
   console.log("account", account)
 
-  // handleDelete = (account) => {
-  //   peops.deleteAcount(expense.id, expense.account_id)
-  // }
 
   return (
-
     <div>
       <h2>
         {account ? account.name : null} - {account ? account.balance : null}
@@ -30,7 +26,5 @@ const Account = (props) => {
 const mapStateToProps = state => {
   return { accounts: state.accounts }
 }
-
-
 
 export default connect(mapStateToProps, {})(Account)

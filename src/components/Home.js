@@ -1,52 +1,66 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import Demo from './DoughnutChart';
-
-import {Carousel} from 'react-bootstrap'
+import { connect } from 'react-redux';
+import {GiPayMoney, GiCommercialAirplane } from 'react-icons/gi'
+import { AiOutlineFileSearch} from 'react-icons/ai'
+import { HiOutlineClipboard } from 'react-icons/hi'
+import { MdAddBox } from 'react-icons/md'
+import {Carousel, Card, CardGroup} from 'react-bootstrap'
 
 class Home extends Component { 
 
-// const Home = () => {
     render() {
         return (
-        //     this.props.user.id 
-        //     ?
+    
            <div>
-               <h1>HOME PAGE BOI</h1>
-<Carousel  className="d-block w-100">
-  <Carousel.Item>
-  <img
-      className="d-block w-100"
-      src="https://kissflow.com/wp-content/uploads/2018/11/Purchase-Order-Tracking_Blog.png"
-      alt="Plan for the Future"
-    />
-    <Carousel.Caption>
-      <h1>Plan for the Future</h1>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <Demo/>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src="https://www.moneyunder30.com/wp-content/uploads/2018/12/Money-Market-Vs.-Savings-648x364-c-default.jpg"
-      alt="Save for Yourself"
-    />
-    <Carousel.Caption>
-      <h3>Save for Yourself</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel>
-               <Demo/>
+              <Carousel>
+                <Carousel.Item>
+                <img 
+                    id="carousel-item"
+                    src="https://atlantachallenge.com/wp-content/uploads/2015/06/business-planning-background-1600x900.png"
+                    alt="Plan for the Future"
+                  />
+                  <Carousel.Caption id="car-text">
+                    <h2>Plan for the Future </h2>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                <img 
+                   id="carousel-item"
+                    // src="https://image.freepik.com/free-vector/people-carrying-jigsaw-pieces-donut-chart_53876-64616.jpg"
+                    src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2020/09/GettyImages-502521786.jpg-savings-accounts-basics-1440x864.jpg"
+                    alt="Save for Yourself"
+                  />
+                  <Carousel.Caption id="car-text">
+                    <h3>Seperate your Expenses by Category <GiPayMoney/> </h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img 
+                  id="carousel-item"
+                    src="https://papers.co/wallpaper/papers.co-od09-nature-travel-kit-27-wallpaper.jpg"
+                    alt="Save for Yourself"
+                  />
+                  <Carousel.Caption id="car-text-1">
+                    <h3>Save for Yourself <GiCommercialAirplane/></h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel><br />
+
+              <CardGroup>
+                <Card id='home-card'>
+                  <h1> <MdAddBox/> </h1>
+                  <h5> Add Accounts to Track your Savings Progress</h5>
+                </Card>
+                <Card id='home-card'>
+                  <h1><HiOutlineClipboard/></h1>
+                  <h5>Write Down your Ongoing Expenses to Keep Better Track</h5>
+                </Card>
+                <Card id="home-card">
+                  <h1> <AiOutlineFileSearch/> </h1>
+                  <h5>Browse Through Resources to Help you Save More</h5>
+                </Card>
+              </CardGroup>
         </div>
-        //     :
-        //     <>
-        //     </>
         );
     }
 }

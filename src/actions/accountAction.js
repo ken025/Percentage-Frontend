@@ -39,12 +39,12 @@ export const addAccount = (data) => {
 
   export const deleteAccount = (accountId) => {
     return (dispatch) => {
-      return fetch(API + `/accounts/${accountId}`, {
+   fetch(API + `/accounts/${accountId}`, {
         method: 'DELETE'
       })
-      .then(response => response.json())
-      .then(account => dispatch({type: 'DELETE_ACCOUNT', 
-      payload: account.id}))
+      .then(dispatch({
+        type: 'DELETE_ACCOUNT', 
+      payload: accountId}))
     }
   }
 

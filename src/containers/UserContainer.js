@@ -7,7 +7,6 @@ const UserContainer = (props) => {
     return(
         <div className="cards"> 
         <UserForm/>
-        {/* {props.savings.map(saving => <SavingCard key = {savingsReducer.id} {...saving} />)} */}
         </div>
         )
 }

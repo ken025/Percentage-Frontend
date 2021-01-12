@@ -6,10 +6,6 @@ import Resources from '../components/Resources'
 // import { fetchResources } from '../actions/resourceAction'
 
 class ResourceContainer extends Component {
-  
-    // componentDidMount(){
-    //     this.props.fetchResources()
-    //   }
 
     render() {
         return(      
@@ -24,11 +20,5 @@ class ResourceContainer extends Component {
         )
     }
 }   
-
-// const mapStateToProps = (state) => ({
-//     resources: state.resources
-// })
-
-// export default connect(mapStateToProps, {fetchResources})(ResourceContainer);
 
 export default ResourceContainer
