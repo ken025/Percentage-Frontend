@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import {Button, Form} from 'react-bootstrap'
 import { toggleSignup, handleLoginFormChange, sendSignup, sendLogin } from '../actions/userActions'
 
+import { FaPercentage } from 'react-icons/fa'
+import Home from './Home'
+
 const Login = (props) => {
     const { signup, toggleSignup, form, handleLoginFormChange, sendSignup, sendLogin } = props
     const { username, password, passwordConfirmation, email, profile_img, name, income, balance } = form
@@ -25,7 +28,8 @@ const Login = (props) => {
           {signup 
           ?
           <>
-           <h1 id="form-title" style={{background: '#82c7a5a9'}} >PERCENTAGE</h1> 
+           <h1 id="form-title">PERCENTAGE <FaPercentage/></h1> 
+            <Home/> <br />
             <h3>Sign Up</h3>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formName" className="mx-sm-5 mb-1">
@@ -47,11 +51,13 @@ const Login = (props) => {
                     </Form><br/>
                 <br/>
                 Already have an account? 
-               <Button onClick={toggleSignup} id="form-toggle">Log In</Button> 
+               <Button onClick={toggleSignup} id="form-toggle">Log In</Button>
+              
                 </>
                 :
                 <>
-                     <h1 id="form-title" style={{background: '#82c7a5a9'}}> PERCENTAGE </h1> 
+                     <h1 id="form-title"> PERCENTAGE <FaPercentage/> </h1>
+                     <Home/> <br />
                         <h3> Log In</h3>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formUsername" className="mx-sm-5 mb-2">

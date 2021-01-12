@@ -21,7 +21,7 @@ console.log("Info", props)
           <>
             <CardDeck>
                 <Card style={{ width: '18rem', background: 'black' }}>
-                <h1 id="form-title" style={{background: '#82c7a5a9'}} >Proile</h1><br />
+                <h1 id="form-title">Proile</h1><br />
                     <h2> {props.user.income}</h2>
                     <h2> {props.user.name}</h2>
                     <h2> {props.user.username}</h2>
@@ -29,7 +29,7 @@ console.log("Info", props)
                 </Card>
 
                 <Card style={{ width: '40rem', background: 'black' }}>
-                    <h1 id="form-title" style={{background: '#82c7a5a9'}} >Update Income</h1><br />
+                    <h1 id="form-title" >Update Income</h1><br />
                         <Form onSubmit={handleSubmit}>
                             <Form.Group controlId="formIncome" className="mx-sm-5 mb-1">
                             <Form.Control type="number" name="income" onChange={handleLoginFormChange} value={income} placeholder="Income"></Form.Control>
@@ -39,7 +39,7 @@ console.log("Info", props)
                 </Card>
 
                 <Card style={{ width: '80rem', background: 'black' }}>
-                    <h1 id="form-title" style={{background: '#82c7a5a9'}} >Edit Info</h1><br />
+                    <h1 id="form-title" >Edit Info</h1><br />
                         <Form onSubmit={handleSubmit}>
                             <Form.Group controlId="formName" className="mx-sm-5 mb-1">
                             <Form.Control type="text" name="name" onChange={handleLoginFormChange} value={name} placeholder="Name"></Form.Control>

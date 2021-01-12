@@ -12,10 +12,8 @@ import Router from './components/Router'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import AccountsContainer from './containers/AccountsContainer'
 import { fetchAccounts } from './actions/accountAction';
 import { fetchResources } from './actions/resourceAction'
-import Home from './components/Home';
 
 class App extends Component {
 

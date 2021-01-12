@@ -53,7 +53,7 @@
 }
 
 #res-card{
-  background-color: #ffffffc7
+  background-color: rgb(209, 209, 209)
 }
 
 #home-card{
@@ -83,4 +83,8 @@ background: #00000083;
 #carousel-item {
   background-size: cover;
   width: 100%;
+}
+
+#form-title{
+ background: #82c7a5a9
 }

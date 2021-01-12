@@ -1,5 +1,5 @@
 import React from 'react'
-import {ListGroup, Card, Accordion, Button} from 'react-bootstrap'
+import { Card, Accordion, Button} from 'react-bootstrap'
 
 const Resource = (props) => {
     console.log(props)
@@ -8,7 +8,7 @@ const Resource = (props) => {
     console.log(title)
     return(
         <>
-          <Accordion defaultActiveKey="0">
+          <Accordion>
             <Card id="res-card">
               <Card.Header>
                 <Accordion.Toggle as={Button} variant="link" eventKey="0">

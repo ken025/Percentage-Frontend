@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {addAccount} from '../actions/accountAction'
 
+import {Button, Form} from 'react-bootstrap'
+
 class AccountInput extends React.Component {
 
   state = {
@@ -27,18 +29,17 @@ class AccountInput extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Account Name: </label>
+      <div><br/>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Label>Account Name: </Form.Label>
           <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
-          <label>Available Balance: </label>
+          <Form.Label>Available Balance: </Form.Label>
           <input type='number' placeholder='Balance' value={this.state.balance} name="balance" onChange={this.handleChange}/><br/>
-          <input type="submit"/>
-        </form>
+          <Button type="submit"> Submit </Button>
+        </Form>
       </div>
     )
   }
 }
-
 
 export default connect(null, {addAccount})(AccountInput)

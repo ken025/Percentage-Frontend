@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { editAccount } from '../actions/accountAction'
 
+import {Button} from 'react-bootstrap'
+
 class AccountEdit extends React.Component {
 
   state = {
@@ -33,7 +35,7 @@ class AccountEdit extends React.Component {
           <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
           <label>Edit Balance: </label>
           <input type='number' placeholder='Balance' value={this.state.balance} name="balance" onChange={this.handleChange}/><br/>
-          <input type="submit"/>
+          <Button type="submit"> Submit </Button>
         </form>
       </div>
     )
