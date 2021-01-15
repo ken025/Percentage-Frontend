@@ -1,5 +1,6 @@
 const API = "http://localhost:3000"
 
+// action creator = backend
 export const addAccount = (data) => {
     return (dispatch) => {
       fetch(API + '/accounts', {
@@ -11,7 +12,9 @@ export const addAccount = (data) => {
         body: JSON.stringify(data)
       })
       .then(response => response.json())
-      .then(account => dispatch({type: 'ADD_ACCOUNT',
+      .then(account => dispatch({
+        // action = reducer
+        type: 'ADD_ACCOUNT',
        payload: account}))
     }
   }

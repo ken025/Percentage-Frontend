@@ -12,9 +12,9 @@ class Footer extends Component {
     render() {
         return (
             <div>
-            <Card class="fixed-bottom">
-                <CardGroup>
-                    <Card id="about-card">
+            <Card className="footer-position">
+                <CardGroup >
+                    <Card id="about-card" className="footer-position">
                         <Card.Body>
                         <Card.Title>Contact Me</Card.Title>
                         <Card.Text>

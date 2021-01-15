@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {Button, Form} from 'react-bootstrap'
+import {Button, Form, Card} from 'react-bootstrap'
 import { toggleSignup, handleLoginFormChange, sendSignup, sendLogin } from '../actions/userActions'
 
 import { FaPercentage } from 'react-icons/fa'
@@ -30,6 +30,7 @@ const Login = (props) => {
           <>
            <h1 id="form-title">PERCENTAGE  <FaPercentage/></h1> 
             <Home/> <br />
+            <Card id="login"><br/>
             <h3>Sign Up</h3>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formName" className="mx-sm-5 mb-1">
@@ -47,17 +48,19 @@ const Login = (props) => {
                     <Form.Group controlId="formPasswordConfirmation" className="mx-sm-5 mb-1">
                         <Form.Control type="password" name="passwordConfirmation" onChange={handleLoginFormChange} value={passwordConfirmation} placeholder="Confirm Password"></Form.Control>
                     </Form.Group><br/>
-                    <Button variant="secondary" type="submit" id="form-button" >Sign Up</Button> 
-                    </Form><br/>
+                    <Button variant="secondary" type="submit" id="form-button" >Sign Up</Button>
+                    </Form>
+                    </Card><br/>
                 <br/>
                 Already have an account? 
-               <Button onClick={toggleSignup} id="form-toggle">Log In</Button>
+               <Button onClick={toggleSignup}>Log In</Button>
               
                 </>
                 :
                 <>
                      <h1 id="form-title"> PERCENTAGE <FaPercentage/> </h1>
                      <Home/> <br />
+                     <Card id="login"><br/>
                         <h3> Log In</h3>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formUsername" className="mx-sm-5 mb-2">
@@ -68,6 +71,7 @@ const Login = (props) => {
                     </Form.Group><br/>
                         <Button variant="secondary" type="submit" id="form-button">Login</Button> 
                 </Form>
+                </Card>
                 <br/>
                 Or 
                 <Button onClick={toggleSignup}>Sign Up!</Button>

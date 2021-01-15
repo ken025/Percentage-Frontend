@@ -97,3 +97,15 @@ background: #00000083;
 /* #about-cards{
   sticky: bottom
 } */
+
+.footer-position{
+  padding-top: 2em;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 6px solid rgb(80, 86, 95);
+}
+
+#login{
+  background-color: rgb(127, 130, 134);
+  border-radius: 40px;
+}

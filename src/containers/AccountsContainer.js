@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Accounts from '../components/Accounts'
 
 class AccountsContainer extends React.Component {
@@ -9,7 +9,7 @@ class AccountsContainer extends React.Component {
      
           <div>
              <section id="home-heading" className="p-5">
-                    <div class="dark-overlay">
+                    <div className="dark-overlay">
                         <h1 id="heading-title">ACCOUNTS</h1>
                         </div>
               </section>

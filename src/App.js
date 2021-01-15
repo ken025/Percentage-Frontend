@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 
-import { autoLogin, logout } from './actions/userActions';
+import { autoLogin, logout, toggleSignup } from './actions/userActions';
 import Login from './components/Login';
 
 import { connect } from "react-redux";
@@ -19,8 +19,10 @@ import Footer from './components/Footer';
 class App extends Component {
 
   componentDidMount(){
+    // checks for token to autologin
     localStorage.token && this.props.autoLogin()
 
+    // makes these actions (fetch) available globally
     this.props.fetchResources()
     this.props.fetchAccounts()
   }
@@ -31,12 +33,13 @@ class App extends Component {
       ?
       <>
       <NavigationBar logout={this.props.logout}/>
-        <Router />
+      <Router />
       </>
       :
       <>
-        <Login/><br />
-        <br /><Footer/>
+        <Login/>
+        <br /><br />
+        <Footer/>
         </>
     )
   }  
@@ -49,11 +52,16 @@ class App extends Component {
     );
   }
 }
-  
+ 
+// used to provide the store data to the component
 const mapStateToProps = (state) => (
   {user: state.user}
 )
-  
 
+const mapDispatchToPros = (dispatch) => {
+  return {
+    fetchAccounts: dispatch({t})
+  }
+}
 
-export default connect(mapStateToProps, { fetchAccounts, fetchResources, autoLogin, logout})(App);
+export default connect(mapStateToProps, { fetchAccounts, fetchResources, autoLogin, logout })(App);

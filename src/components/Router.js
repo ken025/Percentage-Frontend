@@ -10,11 +10,12 @@ import ResourceContainer from '../containers/ResourceContainer';
 const Router = () => {
     return (
         <Switch>
+            {/* from most to least specific */}
             <Route exact path='/' component={Home} />
             <Route path="/resources" component={ ResourceContainer }/>
             <Route path='/accounts/new' component={AccountInput}/>
             <Route path='/accounts/:id' component={Account}/>
-            <Route path='/accounts' component={Accounts}/>\
+            <Route path='/accounts' component={Accounts}/>
       </Switch>
     );
 };

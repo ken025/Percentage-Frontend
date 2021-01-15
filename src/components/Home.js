@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { GoRepoClone } from 'react-icons/go'
 import {GiPayMoney, GiCommercialAirplane } from 'react-icons/gi'
-import { AiOutlineFileSearch, AiOutlineGithub} from 'react-icons/ai'
-import { HiOutlineClipboard, HiOutlineMail } from 'react-icons/hi'
+import { AiOutlineFileSearch} from 'react-icons/ai'
+import { HiOutlineClipboard } from 'react-icons/hi'
 import { MdAddBox } from 'react-icons/md'
-import { FaLinkedin } from 'react-icons/fa'
-import {Carousel, Card, CardGroup, ListGroup} from 'react-bootstrap'
-import Footer from './Footer';
+import {Carousel, ListGroup} from 'react-bootstrap'
 
 class Home extends Component { 
 
@@ -64,7 +61,7 @@ class Home extends Component {
                 </ListGroup.Item>
               </ListGroup><br />
               <br />
-             <Footer/>
+             {/* <Footer/> */}
         </div>
         );
     }
