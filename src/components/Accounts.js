@@ -26,7 +26,7 @@ render(){
     ?
     <>
       <ListGroup>
-      <Button onClick={this.handleToggle}>Sort</Button>
+      <Button onClick={this.handleToggle}>UnSort</Button>
       {[...this.props.accounts].sort((a, b) => (a.balance > b.balance) ? 1 : -1).map(account =>
         <ListGroup.Item key={account.id} id="list">
          <h3><Link to={`/accounts/${account.id}`}>{account.name} - ${account.balance}</Link></h3> 
@@ -34,13 +34,16 @@ render(){
           <Button onClick={() => this.props.deleteAccount(account.id)}>Delete</Button>
         </ListGroup.Item>
         )}
-        <Link to='/accounts/new'><Button>Add Account</Button> </Link>  
+        <Link to='/accounts/new'><Button>Add Account</Button> </Link> <br/> 
+        <h3 id="list">Total Balance: ${this.props.accounts.reduce(function(accumulator, currentValue){
+          return accumulator + currentValue.balance; }, 0)}
+        </h3> 
         </ListGroup>
     </>
     :
     <>
     <ListGroup>
-    <Button onClick={this.handleToggle}>UnSort</Button>
+    <Button onClick={this.handleToggle}>Sort</Button>
     {[...this.props.accounts].map(account =>
       <ListGroup.Item key={account.id} id="list">
        <h3><Link to={`/accounts/${account.id}`}>{account.name} - ${account.balance}</Link></h3> 
@@ -48,10 +51,12 @@ render(){
         <Button onClick={() => this.props.deleteAccount(account.id)}>Delete</Button>
       </ListGroup.Item>
       )}
-      <Link to='/accounts/new'><Button>Add Account</Button> </Link>  
+      <Link to='/accounts/new'><Button>Add Account</Button> </Link><br/> 
+        <h3 id="list">Total Balance: ${this.props.accounts.reduce(function(accumulator, currentValue){
+          return accumulator + currentValue.balance; }, 0)}
+        </h3>   
       </ListGroup>
       </>
-
 } 
 </>
 )

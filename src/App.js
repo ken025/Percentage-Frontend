@@ -58,10 +58,4 @@ const mapStateToProps = (state) => (
   {user: state.user}
 )
 
-const mapDispatchToPros = (dispatch) => {
-  return {
-    fetchAccounts: dispatch({t})
-  }
-}
-
 export default connect(mapStateToProps, { fetchAccounts, fetchResources, autoLogin, logout })(App);
